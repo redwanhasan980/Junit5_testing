@@ -13,4 +13,13 @@ class CalculatorTest {
 
         assertEquals(5, result);
     }
+
+    @Test
+    void subtract_shouldReturnDifferenceOfTwoNumbers() {
+        Calculator calculator = new Calculator();
+
+        int result = calculator.subtract(5, 2);
+
+        assertEquals(4, result);
+    }
 }
