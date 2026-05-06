@@ -9,7 +9,7 @@ public class CalculatorBeforeEachTest {
  void setUp()
  {
       calculator = new Calculator();
-      System.out.println("running ");
+      System.out.println("setUp ");
 
  }
  @Order(1)
@@ -19,7 +19,7 @@ public class CalculatorBeforeEachTest {
 
         int result = calculator.add(2, 3);
 
-        assertEquals(4, result);
+        assertEquals(5, result);
         System.out.println("after add");
     }
 

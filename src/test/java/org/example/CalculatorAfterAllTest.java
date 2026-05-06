@@ -1,27 +1,25 @@
-import org.example.Calculator;
+package org.example;
+
 import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class CalculatorAfterEachTest {
-    private Calculator calculator;
-    @BeforeEach
- void setUp()
+public class CalculatorAfterAllTest {
+    private static Calculator calculator;
+ @BeforeAll
+ static void setUp()
  {
       calculator = new Calculator();
-      System.out.println("setUp ");
-
+      System.out.println("setup ");
 
  }
-
- @AfterEach
- void teardown()
+ @AfterAll
+ static  void tearDown()
  {
      calculator=null;
-     System.out.println("Teardown");
+     System.out.println("tearDown");
  }
-
  @Order(1)
     @Test
     void add_shouldReturnSumOfTwoNumbers() {
@@ -33,7 +31,7 @@ public class CalculatorAfterEachTest {
         System.out.println("after add");
     }
 
-    @Order(1)
+    @Order(2)
     @Test
     void subtract_shouldReturnDifferenceOfTwoNumbers() {
 
